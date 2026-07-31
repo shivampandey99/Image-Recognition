@@ -51,7 +51,7 @@ if uploaded:
     image=Image.open(uploaded)
     c1,c2=st.columns(2)
     with c1:
-        st.image(image,use_container_width=True)
+        st.image(image, use_column_width=True)
         st.write(f"Dimensions: {image.width} x {image.height}")
         st.write(f"Mode: {image.mode}")
     results,ms=predict(image)
