@@ -228,27 +228,6 @@ Artificial Intelligence & Machine Learning
     )
 
 # -----------------------------------------------------
-# HERO SECTION
-# -----------------------------------------------------
-
-st.markdown(
-"""
-<div class="hero">
-
-<h1>🖼️ AI Image Recognition</h1>
-
-<p>
-Upload an image and let the pretrained
-<b>MobileNetV2</b> model identify the object using
-Deep Learning.
-</p>
-
-</div>
-""",
-unsafe_allow_html=True,
-)
-
-# -----------------------------------------------------
 # IMAGE PREPROCESSING
 # -----------------------------------------------------
 
@@ -469,23 +448,28 @@ with right:
             }
         )
 
-        st.markdown(
-            f"""
-<div class="card">
-<b>{colors[i]} {label}</b>
+        prediction_df = pd.DataFrame({
+    "Rank": ["🥇","🥈","🥉","4️⃣","5️⃣"],
+    "Prediction": [
+        r[1].replace("_"," ").title()
+        for r in results
+    ],
+    "Confidence (%)": [
+        round(r[2]*100,2)
+        for r in results
+    ]
+})
 
-<br><br>
+st.dataframe(
+    prediction_df,
+    use_container_width=True,
+    hide_index=True
+)
 
-Confidence
 
-</div>
-""",
-            unsafe_allow_html=True,
-        )
+st.progress(float(prob))
 
-        st.progress(float(prob))
-
-        st.caption(f"{percent:.2f}%")
+st.caption(f"{percent:.2f}%")
 
 # -----------------------------------------------------
 # DOWNLOAD REPORT
@@ -506,97 +490,10 @@ st.download_button(
 )
 
 # -----------------------------------------------------
-# SESSION HISTORY
-# -----------------------------------------------------
-
-if "history" not in st.session_state:
-    st.session_state.history = []
-
-st.session_state.history.append(
-    {
-        "Image": uploaded_file.name,
-        "Prediction": top_label,
-        "Confidence": f"{top_confidence:.2f}%",
-    }
-)
-
-st.write("")
-
-with st.expander("🕘 Prediction History"):
-
-    history_df = pd.DataFrame(st.session_state.history)
-
-    st.dataframe(
-        history_df,
-        use_container_width=True,
-        hide_index=True,
-    )
-
-# -----------------------------------------------------
-# TECHNICAL DETAILS
-# -----------------------------------------------------
-
-with st.expander("⚙ Technical Details"):
-
-    st.markdown(
-        """
-### Model
-
-- MobileNetV2
-
-### Framework
-
-- TensorFlow / Keras
-
-### Dataset
-
-- ImageNet
-
-### Input Size
-
-- 224 × 224
-
-### Output Classes
-
-- 1000
-
-### Prediction Type
-
-- Image Classification
-
-### Deployment
-
-- Streamlit
-"""
-    )
-
-# -----------------------------------------------------
 # FOOTER
 # -----------------------------------------------------
+st.markdown("---")
 
-st.markdown(
-"""
-<div class="footer">
-
-<hr>
-
-<h4>👨‍💻 Developed by</h4>
-
-<b>Shivam Pandey</b>
-
-<br>
-
-B.Tech — Computer Science & Engineering
-
-<br>
-
-Specialization: Artificial Intelligence & Machine Learning
-
-<br><br>
-
-🚀 Powered by TensorFlow • MobileNetV2 • Streamlit
-
-</div>
-""",
-unsafe_allow_html=True,
+st.caption(
+    "Powered by TensorFlow • MobileNetV2"
 )
