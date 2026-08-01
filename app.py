@@ -350,8 +350,8 @@ with left:
     st.subheader("🖼 Uploaded Image")
 
     st.image(
-        image,
-        use_container_width=True
+    image,
+    use_column_width=True
     )
 
     col1,col2,col3 = st.columns(3)
