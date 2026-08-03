@@ -2,6 +2,10 @@
 
 A clean, minimal Streamlit application for image classification using **MobileNetV2** pretrained on **ImageNet**.
 
+## 🚀 Live Demo
+
+🔗 **Live Application:** https://image-recognition-sp.streamlit.app/
+
 ## Features
 
 - Clean and minimal Streamlit interface

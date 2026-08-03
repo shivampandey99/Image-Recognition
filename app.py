@@ -125,24 +125,34 @@ with st.sidebar:
 
     st.title("🖼️ Image Recognition")
 
-    st.caption("MobileNetV2 • ImageNet")
+    st.caption("AI Image Classification")
 
     st.divider()
 
-    st.markdown("### Model")
+    st.subheader("🤖 Model")
+    st.write("**MobileNetV2**")
 
-    st.write("**Architecture:** MobileNetV2")
-    st.write("**Dataset:** ImageNet")
-    st.write("**Classes:** 1000")
+    st.subheader("📚 Dataset")
+    st.write("ImageNet")
 
-    st.divider()
-
-    st.markdown("### Supported Formats")
-
+    st.subheader("📷 Supported Formats")
     st.write("• JPG")
     st.write("• JPEG")
     st.write("• PNG")
 
+    st.divider()
+
+    st.subheader("ℹ️ About")
+
+    st.write("**Input Size:** 224 × 224 px")
+    st.write("**Output Classes:** 1000")
+    st.write("**Framework:** TensorFlow / Keras")
+
+    st.divider()
+
+    st.info(
+        "💡 Upload a clear image for better prediction accuracy."
+    )
 # --------------------------------------------------
 # HEADER
 # --------------------------------------------------
