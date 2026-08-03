@@ -30,8 +30,7 @@ st.markdown("""
 <style>
 
 #MainMenu,
-footer,
-header{
+footer{
     visibility:hidden;
 }
 
