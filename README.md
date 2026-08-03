@@ -4,12 +4,15 @@ A clean, minimal Streamlit application for image classification using **MobileNe
 
 ## Features
 
-- Minimal Apple-inspired interface
-- Upload JPG, JPEG, or PNG
-- Top-5 predictions with confidence
-- Inference time
-- Download predictions as CSV
-- Streamlit & GitHub ready
+- Clean and minimal Streamlit interface
+- Upload JPG, JPEG, and PNG images
+- AI-powered image classification using MobileNetV2
+- Displays the best prediction with confidence score
+- Top 5 predicted classes
+- Image details (Width, Height, Size, Color Mode)
+- Prediction time measurement
+- Download prediction report as CSV
+- Ready for GitHub and Streamlit Cloud deployment
 
 ## Tech Stack
 
@@ -24,12 +27,17 @@ A clean, minimal Streamlit application for image classification using **MobileNe
 ## Project Structure
 
 ```text
-image-recognition/
+Image-Recognition/
+│
+├── assets/
+│   ├── sample_dog.jpg
+│   └── sample_flower.jpg
+│
 ├── app.py
 ├── Image Recognition Notebook.ipynb
 ├── requirements.txt
-├── README.md
-└── assets/
+├── runtime.txt
+└── README.md
 ```
 
 ## Run
@@ -45,3 +53,13 @@ streamlit run app.py
 - Input: 224×224
 - Dataset: ImageNet
 - Classes: 1000
+
+
+---
+
+## 👨‍💻 Author
+
+**Shivam Pandey**
+
+B.Tech — Computer Science & Engineering  
+Specialization: Artificial Intelligence & Machine Learning
